@@ -1,0 +1,39 @@
+[
+  {
+    "Action": [
+      "cognito-idp:AdminInitiateAuth"
+    ],
+    "Resource": [
+      "*"
+    ],
+    "Effect": "Allow"
+  },
+  {
+    "Action": [
+      "ses:SendEmail"
+    ],
+    "Resource": [
+      "*"
+    ],
+    "Effect": "Allow"
+  },
+  {
+    "Action": [
+      "secretsmanager:GetSecretValue"
+    ],
+    "Resource": [
+      "*"
+    ],
+    "Effect": "Allow"
+  },
+  {
+    "Action": [
+      "ssm:GetParameters",
+      "ssm:GetParameter"
+    ],
+    "Resource": [
+      "arn:aws:ssm:*:*:parameter/aws/reference/secretsmanager/*"
+    ],
+    "Effect": "Allow"
+  }
+]

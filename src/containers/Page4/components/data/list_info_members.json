@@ -1,0 +1,34 @@
+[
+    {
+        "id": "1",
+        "src": "/assets/images/news/the_benabar.png",
+        "name": "The Name 1",
+        "info":"Life A Day!",
+        "progress":"87",
+        "member":"4 new members"
+    },
+    {
+        "id": "2",
+        "src": "/assets/images/news/croze_church.png",
+        "name": "The Name 2",
+        "info": "Life A Day!",
+        "progress": "70",
+        "member": "16 new members"
+    },
+    {
+        "id": "3",
+        "src": "/assets/images/news/hoshi_union.png",
+        "name": "The Benabar",
+        "info": "Discover Yourself",
+        "progress": "53",
+        "member": "7 new members"
+    },
+    {
+        "id": "4",
+        "src": "/assets/images/news/caravane_church.png",
+        "name": "The Benabar",
+        "info": "Discover Yourself",
+        "progress": "33",
+        "member": "5 new members"
+    }
+]

@@ -1,0 +1,26 @@
+export const typography = {
+  fontFamily: ['"Hiragino Sans W3"', 'sans-serif'].join(','),
+  fontSize: 15,
+  h1: { fontSize: '1.75rem' },
+  h2: { fontSize: '1.5rem' },
+  h3: { fontSize: '1.25rem' },
+  h4: { fontSize: '1.125rem' },
+  h5: { fontSize: '1rem' },
+  h6: { fontSize: '0.75rem' },
+  subtitle1: {
+    fontFamily: '"Source Han Sans JP", sans-serif',
+    fontSize: '12px',
+    fontWeight: 400,
+    lineHeight: 'normal',
+  },
+  subtitle2: {
+    fontFamily: '"Inter", sans-serif',
+    fontSize: '16px',
+    lineHeight: 'normal',
+  },
+  body1: { fontFamily: '"Hiragino Sans W3", sans-serif', fontSize: '15px', fontWeight: 300, lineHeight: 'normal' },
+  body2: { fontFamily: '"Hiragino Sans W6", sans-serif', fontSize: '15px', fontWeight: 600, lineHeight: 'normal' },
+  caption: { fontFamily: '"Roboto Condensed", sans-serif', fontSize: '15px', fontWeight: 600, color: '#4A4A4A' },
+  button: { fontSize: '1.25rem', fontWeightBold: true },
+  overline: { fontSize: '1.25rem' },
+}

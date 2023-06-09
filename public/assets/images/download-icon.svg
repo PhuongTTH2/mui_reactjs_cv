@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17.067" height="22.695" viewBox="0 0 17.067 22.695">
+  <defs>
+    <filter id="Union_1" x="1.421" y="0" width="14.227" height="20.412" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_7961" x="0" y="16.578" width="17.067" height="6.117" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_7864" data-name="Group 7864" transform="translate(-904.766 -250.665)">
+    <g id="Group_8506" data-name="Group 8506" transform="translate(8246.266 11786.166)">
+      <g id="Group_8505" data-name="Group 8505" transform="translate(-7340 -11534)">
+        <g id="Group_8504" data-name="Group 8504">
+          <g transform="matrix(1, 0, 0, 1, -1.5, -1.5)" filter="url(#Union_1)">
+            <path id="Union_1-2" data-name="Union 1" d="M7298.329,11554.7l-4.611-4.591a1,1,0,0,1,.705-1.708h2.613v-9.822a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1v9.822h2.613a1,1,0,0,1,.7,1.708l-4.611,4.591a1,1,0,0,1-1.412,0Z" transform="translate(-7290.5 -11536.08)" fill="#b1c8f3"/>
+          </g>
+        </g>
+        <g transform="matrix(1, 0, 0, 1, -1.5, -1.5)" filter="url(#Path_7961)">
+          <path id="Path_7961-2" data-name="Path 7961" d="M-7340.9-11520.244v2.617h13.067v-2.617" transform="translate(7342.9 11538.32)" fill="none" stroke="#b1c8f3" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mcpdemandemulator-dev-151758-authRole",
+      "UnauthRoleArn": "arn:aws:iam::233602568794:role/amplify-mcpdemandemulator-dev-151758-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::233602568794:role/amplify-mcpdemandemulator-dev-151758-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-mcpdemandemulator-dev-151758-deployment",
+      "UnauthRoleName": "amplify-mcpdemandemulator-dev-151758-unauthRole",
+      "StackName": "amplify-mcpdemandemulator-dev-151758",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:233602568794:stack/amplify-mcpdemandemulator-dev-151758/82aa26b0-e703-11ec-a996-069534e35017",
+      "AmplifyAppId": "djx1d1fmsnnun"
+    }
+  }
+}

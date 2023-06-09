@@ -1,0 +1,229 @@
+/* Navbar */
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+}
+.navbar-logo img{
+    width: 62px;
+    height: 16px;
+}
+.navbar-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.navbar-container p {
+    color: #FFF;
+    font-family:  var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    cursor:pointer;
+    margin: 0 16px;
+    text-transform: capitalize;
+}
+.navbar-container-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-container-button button{
+    width: 152px;
+    height: 58px;
+    background: #FF4820;
+    cursor: pointer;
+    color: #FFF;
+    border-radius: 5px;
+
+    font-size: 18px;
+    line-height: 25px;
+}
+
+/* Header */
+.header{
+    display: flex;
+    background: var(--gradient-text);
+}
+.header-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.header-container h1{
+    font-family:var(--font-family);
+    font-weight: 800;
+    font-size: 62px;
+    line-height: 75px;
+}
+.header-container p{
+    font-family:var(--font-family);
+    font-weight: normal;
+    font-size: normal;
+    line-height: 26px;
+    color: #FFF;
+}
+
+.header-container-input {
+    width: 100%;
+    display: flex;
+}
+.header-container-input input{
+    width: 100%;
+    min-height: 50px;
+    border-radius: 5px 0 0 5px;
+    border: 2px solid var(--color-footer);
+    background-color:var(--color-footer);
+    color:#3D6184;
+    outline: none;
+
+    font-family:var(--font-family);
+    font-size: 20px;
+    line-height: 27px;
+}
+.header-container-input button{
+    width: 152px;
+    min-height: 50px;
+    background: #FF4820;
+    cursor: pointer;
+    color: #FFF;
+    border-radius: 0 5px 5px 0;
+    border: none;
+
+    font-family:var(--font-family);
+    font-size: 20px;
+    line-height: 27px;
+}
+.header-container-img{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.header-container-img img{
+    width: 180px;
+    height: 38px;
+}
+.header-container-img p{
+    font-family:var(--font-family);
+    font-weight: normal;
+    line-height: 26px;
+    color: #FFF;
+    padding-left: 4px;
+} 
+.header-img{
+    flex: 1;
+}
+.header-img img{
+    width: 100%;
+    height: 100%;
+}
+
+/* brand */
+.brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px;
+}
+.brand div{
+    margin: 16px;
+}
+/* gpt3 */
+.gpt3{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 32px;
+}
+.gpt3-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.gpt3-content h1{
+    font-family:var(--font-family);
+    font-size: 34px;
+    line-height: 45px;
+}
+.gpt3-content p{
+    font-family:var(--font-family);
+    font-size: 16px;
+    line-height: 30px;
+    color: #FFF;
+    cursor: pointer;
+}
+.gpt3-feature-3{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.gpt3-feature-title{
+    display: flex;
+}
+.gpt3-feature-title-info{
+    max-width: 180px;
+    margin-right: 32px;
+}
+.gpt3-feature-title-info div{
+   width: 38px;
+   height: 3px;
+   background: var(--gradient-text);
+}
+.gpt3-feature-title-info h1{
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #FFF;
+}
+.gpt3-feature-title-text{
+    max-width: 390px;
+}
+.gpt3-feature-title-text h1{
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height:24px;
+    color: var(--color-text);
+}
+
+
+/* cta */
+.cta{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background: var(--gradient-bar);
+    border-radius: 20px;
+    margin: 64px;
+}
+.cta-content p{
+    font-family:var(--font-family);
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.cta-content h1{
+    font-family:var(--font-family);
+    font-size: 24px;
+    line-height: 30px;
+}
+.cta-button{
+    display: flex;
+    align-items: center;
+}
+.cta-button button{
+    font-family:var(--font-family);
+    font-size: 18px;
+    line-height: 30px;
+    color: #FFF;
+    background: #000;
+    border-radius: 40px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+}

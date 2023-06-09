@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #3B3B3B;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --font-family: 'Manrope', sans-serif;
+
+  --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+  --gradient-bar: linear-gradient(103.22deg, #AE67FA -13.86%, #F49867 99.55%);
+  
+  --color-bg: #040C18;
+  --color-footer : #031B34;
+  --color-blog: #042c54;
+  --color-text: #81AFDD;
+  --color-subtext: #FF8A71;
+}
+.section__padding {
+  padding: 4rem 6rem;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+.gradient__text {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@font-face {
+  font-family: 'Hiragino Sans W6';
+  src: local('Hiragino Sans W6'), url(./fonts/ヒラギノ角ゴProW6.otf) format('opentype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Hiragino Sans W3';
+  src: local('Hiragino Sans W3'), url(./fonts/ヒラギノ角ゴProW3.otf) format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Source Han Sans JP';
+  src: local('Source Han Sans JP'), url(./fonts/SourceHanSansJP.otf) format('opentype');
+  font-weight: 400;
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="20" viewBox="0 0 17 20">
+  <defs>
+    <filter id="Icon_awesome-trash-alt" x="0" y="0" width="17" height="20" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g data-type="innerShadowGroup">
+    <path id="Icon_awesome-trash-alt-2" data-name="Icon awesome-trash-alt" d="M1.214,18.125A1.849,1.849,0,0,0,3.036,20H13.964a1.849,1.849,0,0,0,1.821-1.875V5H1.214Zm10.321-10a.607.607,0,1,1,1.214,0v8.75a.607.607,0,1,1-1.214,0Zm-3.643,0a.607.607,0,1,1,1.214,0v8.75a.607.607,0,1,1-1.214,0Zm-3.643,0a.607.607,0,1,1,1.214,0v8.75a.607.607,0,1,1-1.214,0ZM16.393,1.25H11.839L11.483.52A.908.908,0,0,0,10.667,0H6.329a.9.9,0,0,0-.812.52l-.357.73H.607A.616.616,0,0,0,0,1.875v1.25a.616.616,0,0,0,.607.625H16.393A.616.616,0,0,0,17,3.125V1.875A.616.616,0,0,0,16.393,1.25Z" transform="translate(0 0)" fill="#626262"/>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Icon_awesome-trash-alt)">
+      <path id="Icon_awesome-trash-alt-3" data-name="Icon awesome-trash-alt" d="M1.214,18.125A1.849,1.849,0,0,0,3.036,20H13.964a1.849,1.849,0,0,0,1.821-1.875V5H1.214Zm10.321-10a.607.607,0,1,1,1.214,0v8.75a.607.607,0,1,1-1.214,0Zm-3.643,0a.607.607,0,1,1,1.214,0v8.75a.607.607,0,1,1-1.214,0Zm-3.643,0a.607.607,0,1,1,1.214,0v8.75a.607.607,0,1,1-1.214,0ZM16.393,1.25H11.839L11.483.52A.908.908,0,0,0,10.667,0H6.329a.9.9,0,0,0-.812.52l-.357.73H.607A.616.616,0,0,0,0,1.875v1.25a.616.616,0,0,0,.607.625H16.393A.616.616,0,0,0,17,3.125V1.875A.616.616,0,0,0,16.393,1.25Z" transform="translate(0 0)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

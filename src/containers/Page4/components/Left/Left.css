@@ -1,0 +1,128 @@
+.left {
+    margin-top: 10px;
+    width: 300px;
+    position: sticky;
+    top: 0;
+}
+
+.left-header {
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-header-header {
+    background: #00aeef;
+    border-radius: 5px 5px 0 0;
+    padding-left: 10px;
+}
+
+.left-header-header h1 {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    color: #fff200;
+}
+
+.left-header-image {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.left-header-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.left-header-image-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-header-image-content a {
+    color: #00aeef;
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.left-header-image-content span,
+.left-header-bottom p {
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.left-header-bottom {
+    padding-left: 10px;
+}
+
+/* content */
+.left-content {
+    margin-top: 10px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-content-header {
+    background: #00aeef;
+    padding-left: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.left-content-header h1 {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    color: #fff200;
+}
+
+.left-content-image {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.left-content-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.left-content-image-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.left-content-image-content a {
+    color: #00aeef;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.left-content-image-content span {
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.left-content-bottom {
+    width: 30px;
+    height: 20px;
+    background: #fff200;
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
