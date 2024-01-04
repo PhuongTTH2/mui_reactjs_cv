@@ -1,0 +1,16 @@
+{
+  
+  "function": {
+    "getDataTest3": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "queue": {
+    "retryBillingQueue": {
+      "providerPlugin": "awscloudformation",
+      "service": "SQS"
+    }
+  }
+}

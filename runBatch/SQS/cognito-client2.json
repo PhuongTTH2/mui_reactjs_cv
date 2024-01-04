@@ -1,0 +1,37 @@
+{
+    "UserPoolId": "",
+    "ClientName": "",
+    "ClientId": "",
+    "RefreshTokenValidity": 2,
+    "AccessTokenValidity": 60,
+    "IdTokenValidity": 60,
+    "TokenValidityUnits": {
+        "RefreshToken": "days",
+        "AccessToken": "minutes",
+        "IdToken": "minutes"
+    },
+    "ExplicitAuthFlows": [
+        "ALLOW_ADMIN_USER_PASSWORD_AUTH",
+        "ALLOW_CUSTOM_AUTH",
+        "ALLOW_REFRESH_TOKEN_AUTH",
+        "ALLOW_USER_SRP_AUTH"
+    ],
+    "SupportedIdentityProviders": [
+        "COGNITO"
+    ],
+    "CallbackURLs": [
+        "http://localhost:3000/"
+    ],
+    "LogoutURLs": [
+        "http://localhost:3000/"
+    ],
+    "AllowedOAuthFlows": [
+        "code"
+    ],
+    "AllowedOAuthScopes": [
+        "aws.cognito.signin.user.admin",
+        "openid"
+    ],
+    "AllowedOAuthFlowsUserPoolClient": true,
+    "PreventUserExistenceErrors": "LEGACY"
+}

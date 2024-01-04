@@ -1,0 +1,30 @@
+.gpt3{
+    display:flex;
+    flex-direction: column;
+
+}
+.gpt3-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.gpt3-content h1{
+    font-family: var(--font-family);
+    font-size: 34px;
+    line-height: 45px;
+    font-weight: 800;
+}
+.gpt3-content p {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 500;
+    color: var(--color-subtext);
+    cursor:pointer;
+ }
+ .gpt3-feature-3 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+ }

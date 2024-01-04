@@ -1,0 +1,55 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >-
+  {"createdOn":"Windows","createdBy":"Amplify","createdWith":"7.3.6","stackType":"queue-SQS","metadata":{}}
+Parameters:
+  env:
+    Type: String
+Resources:
+  RetryBillingQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      FifoQueue: true
+      VisibilityTimeout: 1800
+      ContentBasedDeduplication: false
+      DelaySeconds: 600
+      QueueName:
+        Fn::Join:
+          - ""
+          - - retry-billing-queue-
+            - Ref: env
+            - .fifo
+  SQSPolicy:
+    Type: AWS::SQS::QueuePolicy
+    Properties:
+      Queues:
+        - Ref: RetryBillingQueue
+      PolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal: "*"
+            Action:
+              - SQS:SendMessage
+              - SQS:ReceiveMessage
+              - SQS:DeleteMessage
+              - SQS:GetQueueAttributes
+            Resource:
+              Fn::GetAtt:
+                - RetryBillingQueue
+                - Arn
+Outputs:
+  QueueURL:
+    Description: URL of new Amazon SQS Queue
+    Value:
+      Ref: RetryBillingQueue
+  Arn:
+    Description: ARN of new Amazon SQS Queue
+    Value:
+      Fn::GetAtt:
+        - RetryBillingQueue
+        - Arn
+  QueueName:
+    Description: Name new Amazon SQS Queue
+    Value:
+      Fn::GetAtt:
+        - RetryBillingQueue
+        - QueueName

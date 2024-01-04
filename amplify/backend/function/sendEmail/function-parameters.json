@@ -1,0 +1,43 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "auth": {
+      "realneppaconsole83a3aa03": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "cognitoClientId",
+      "environmentVariableName": "COGNITO_CLIENT_ID"
+    },
+    {
+      "cloudFormationParameterName": "fromAddress",
+      "environmentVariableName": "FROM_ADDRESS"
+    },
+    {
+      "cloudFormationParameterName": "logLevel",
+      "environmentVariableName": "LOG_LEVEL"
+    },
+    {
+      "cloudFormationParameterName": "platformApiUrl",
+      "environmentVariableName": "PLATFORM_API_URL"
+    },
+    {
+      "cloudFormationParameterName": "realneEnv",
+      "environmentVariableName": "REALNE_ENV"
+    },
+    {
+      "cloudFormationParameterName": "ppaUrl",
+      "environmentVariableName": "PPA_URL"
+    },
+    {
+      "cloudFormationParameterName": "timestreamEnv",
+      "environmentVariableName": "TIMESTREAM_ENV"
+    }
+  ]
+}

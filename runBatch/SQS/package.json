@@ -1,0 +1,19 @@
+{
+  "name": "sqs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.418.0",
+    "@aws-sdk/client-sqs": "^3.418.0",
+    "@aws-sdk/client-timestream-query": "^3.428.0",
+    "@aws-sdk/s3-request-presigner": "^3.428.0",
+    "fs": "^0.0.1-security",
+    "moment": "^2.29.1"
+  }
+}

@@ -1,0 +1,471 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Lambda Function resource stack creation using Amplify CLI",
+  "Parameters": {
+    "CloudWatchRule": {
+      "Type": "String",
+      "Default": "NONE",
+      "Description": " Schedule Expression"
+    },
+    "deploymentBucketName": {
+      "Type": "String"
+    },
+    "env": {
+      "Type": "String"
+    },
+    "s3Key": {
+      "Type": "String"
+    },
+    "apirealneppaconsoleGraphQLAPIIdOutput": {
+      "Type": "String",
+      "Default": "apirealneppaconsoleGraphQLAPIIdOutput"
+    },
+    "apirealneppaconsoleGraphQLAPIEndpointOutput": {
+      "Type": "String",
+      "Default": "apirealneppaconsoleGraphQLAPIEndpointOutput"
+    },
+    "authrealneppaconsole83a3aa03UserPoolId": {
+      "Type": "String",
+      "Default": "authrealneppaconsole83a3aa03UserPoolId"
+    },
+    "realneEnv": {
+      "Type": "String"
+    },
+    "cognitoClientId": {
+      "Type": "String"
+    },
+    "cognitoUserPoolId": {
+      "Type": "String"
+    },
+    "fromAddress": {
+      "Type": "String"
+    },
+    "logLevel": {
+      "Type": "String"
+    },
+    "platformApiUrl": {
+      "Type": "String"
+    },
+    "ppaUrl": {
+      "Type": "String"
+    },
+    "timestreamEnv": {
+      "Type": "String"
+    },
+    "TimestreamRegion": {
+      "Type": "String"
+    }
+  },
+  "Conditions": {
+    "ShouldNotCreateEnvResources": {
+      "Fn::Equals": [
+        {
+          "Ref": "env"
+        },
+        "NONE"
+      ]
+    }
+  },
+  "Resources": {
+    "LambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Metadata": {
+        "aws:asset:path": "./src",
+        "aws:asset:property": "Code"
+      },
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
+        },
+        "Handler": "index.handler",
+        "FunctionName": {
+          "Fn::If": [
+            "ShouldNotCreateEnvResources",
+            "sendEmail",
+            {
+              "Fn::Join": [
+                "",
+                [
+                  "sendEmail",
+                  "-",
+                  {
+                    "Ref": "env"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "Environment": {
+          "Variables": {
+            "ENV": {
+              "Ref": "env"
+            },
+            "REGION": {
+              "Ref": "AWS::Region"
+            },
+            "API_REALNEPPACONSOLE_GRAPHQLAPIIDOUTPUT": {
+              "Ref": "apirealneppaconsoleGraphQLAPIIdOutput"
+            },
+            "API_REALNEPPACONSOLE_GRAPHQLAPIENDPOINTOUTPUT": {
+              "Ref": "apirealneppaconsoleGraphQLAPIEndpointOutput"
+            },
+            "AUTH_REALNEPPACONSOLE83A3AA03_USERPOOLID": {
+              "Ref": "authrealneppaconsole83a3aa03UserPoolId"
+            },
+            "COGNITO_CLIENT_ID": {
+              "Ref": "cognitoClientId"
+            },
+            "COGNITO_USER_POOL_ID": {
+              "Ref": "cognitoUserPoolId"
+            },
+            "FROM_ADDRESS": {
+              "Ref": "fromAddress"
+            },
+            "LOG_LEVEL": {
+              "Ref": "logLevel"
+            },
+            "PLATFORM_API_URL": {
+              "Ref": "platformApiUrl"
+            },
+            "PPA_URL": {
+              "Ref": "ppaUrl"
+            },
+            "TIMESTREAM_ENV": {
+              "Ref": "timestreamEnv"
+            },
+            "TIMESTREAM_REGION": {
+              "Ref": "TimestreamRegion"
+            },
+            "REALNE_ENV": {
+              "Ref": "realneEnv"
+            },
+            "TIMESTREAM_ACCESS_KEY_ID": {
+              "Fn::Join": [
+                "",
+                [
+                  "aws/reference/secretsmanager/",
+                  {
+                    "Fn::Sub": [
+                      "realne-pf-timestream-access-key-id-${env}",
+                      {
+                        "env": {
+                          "Ref": "env"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            "TIMESTREAM_SECRET_ACCESS_KEY": {
+              "Fn::Join": [
+                "",
+                [
+                  "aws/reference/secretsmanager/",
+                  {
+                    "Fn::Sub": [
+                      "realne-pf-timestream-secret-access-key-${env}",
+                      {
+                        "env": {
+                          "Ref": "env"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            "COGNITO_AUTH_USERNAME": {
+              "Fn::Join": [
+                "",
+                [
+                  "aws/reference/secretsmanager/",
+                  {
+                    "Fn::Sub": [
+                      "realne-pf-cognito-auth-username-${env}",
+                      {
+                        "env": {
+                          "Ref": "env"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            "COGNITO_AUTH_PASSWORD": {
+              "Fn::Join": [
+                "",
+                [
+                  "aws/reference/secretsmanager/",
+                  {
+                    "Fn::Sub": [
+                      "realne-pf-cognito-auth-password-${env}",
+                      {
+                        "env": {
+                          "Ref": "env"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "LambdaExecutionRole",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs14.x",
+        "Layers": [],
+        "Timeout": "900",
+        "MemorySize": "512"
+      }
+    },
+    "LambdaExecutionRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "RoleName": {
+          "Fn::If": [
+            "ShouldNotCreateEnvResources",
+            "realneppaconsoleLambdaRolea1e26eed",
+            {
+              "Fn::Join": [
+                "",
+                [
+                  "realneppaconsoleLambdaRolea1e26eed",
+                  "-",
+                  {
+                    "Ref": "env"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "lambda.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "lambdaexecutionpolicy": {
+      "DependsOn": [
+        "LambdaExecutionRole"
+      ],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "lambda-execution-policy",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+              ],
+              "Resource": {
+                "Fn::Sub": [
+                  "arn:aws:logs:${region}:${account}:log-group:/aws/lambda/${lambda}:log-stream:*",
+                  {
+                    "region": {
+                      "Ref": "AWS::Region"
+                    },
+                    "account": {
+                      "Ref": "AWS::AccountId"
+                    },
+                    "lambda": {
+                      "Ref": "LambdaFunction"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "CloudWatchEvent": {
+      "Type": "AWS::Events::Rule",
+      "Properties": {
+        "Description": "Schedule rule for Lambda",
+        "ScheduleExpression": {
+          "Ref": "CloudWatchRule"
+        },
+        "State": "ENABLED",
+        "Targets": [
+          {
+            "Arn": {
+              "Fn::GetAtt": [
+                "LambdaFunction",
+                "Arn"
+              ]
+            },
+            "Id": {
+              "Ref": "LambdaFunction"
+            }
+          }
+        ]
+      }
+    },
+    "PermissionForEventsToInvokeLambda": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "LambdaFunction"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "events.amazonaws.com",
+        "SourceArn": {
+          "Fn::GetAtt": [
+            "CloudWatchEvent",
+            "Arn"
+          ]
+        }
+      }
+    },
+    "AmplifyResourcesPolicy": {
+      "DependsOn": [
+        "LambdaExecutionRole"
+      ],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "appsync:GraphQL"
+              ],
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:appsync:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":apis/",
+                      {
+                        "Ref": "apirealneppaconsoleGraphQLAPIIdOutput"
+                      },
+                      "/types/Query/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "cognito-identity:Describe*",
+                "cognito-identity:Get*",
+                "cognito-identity:List*",
+                "cognito-idp:Describe*",
+                "cognito-idp:AdminGetDevice",
+                "cognito-idp:AdminGetUser",
+                "cognito-idp:AdminList*",
+                "cognito-idp:List*",
+                "cognito-sync:Describe*",
+                "cognito-sync:Get*",
+                "cognito-sync:List*",
+                "iam:ListOpenIdConnectProviders",
+                "iam:ListRoles",
+                "sns:ListPlatformApplications"
+              ],
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:cognito-idp:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":userpool/",
+                      "us-west-2_Hkc8hRMxh"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "Outputs": {
+    "Name": {
+      "Value": {
+        "Ref": "LambdaFunction"
+      }
+    },
+    "Arn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "LambdaFunction",
+          "Arn"
+        ]
+      }
+    },
+    "Region": {
+      "Value": {
+        "Ref": "AWS::Region"
+      }
+    },
+    "LambdaExecutionRole": {
+      "Value": {
+        "Ref": "LambdaExecutionRole"
+      }
+    },
+    "CloudWatchEventRule": {
+      "Value": {
+        "Ref": "CloudWatchEvent"
+      }
+    }
+  }
+}

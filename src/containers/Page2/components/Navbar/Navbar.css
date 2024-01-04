@@ -1,0 +1,52 @@
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+}
+.navbar-link{
+    flex: 1;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+}
+.navbar-logo img{
+    width: 62px;
+    height: 16px;
+}
+.navbar-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-container p,
+.navbar-sign p{
+  color: #FFF;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  cursor: pointer;
+  margin: 0 16px;
+  text-transform: capitalize;
+  
+}
+.navbar-sign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-sign button{
+    width: 152px;
+    height: 58px;
+    background: #FF4820;
+    border-radius:5px;
+    color: #FFF;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    cursor: pointer;
+}
